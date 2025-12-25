@@ -32,7 +32,7 @@ lscpu
 If the output doesn't show `Architecture: aarch64` or `CPU op-mode(s): 32-bit, 64-bit`, then do not bother to continue. Your phone is not running a 64-bit OS.
 
 ```bash
-curl -o- -k curl -o- -k https://github.com/bozzbet/rvsc/blob/mcvrsc/install.sh | bash
+curl -o- -k https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/install.sh | bash
 ```
 For easy access on phones:
 ![install.sh](QR/mcvim_install.png)
