@@ -15,11 +15,11 @@ EOF
   chmod 0600 ~/.ssh/authorized_keys
 fi
 
-if [ ! -d ~/ccminer ]
+if [ ! -d ~/vrsc/ccminerd ]
 then
-  mkdir ~/ccminer
+  mkdir ~/vrsc/ccminerd
 fi
-cd ~/ccminer
+cd ~/vrsc/ccminerd
 
 GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer-ARM-optimized/releases?per_page=1" | jq -c '[.[] | del (.body)]')
 GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].browser_download_url")
@@ -27,39 +27,39 @@ GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].name")
 
 echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
 
-wget ${GITHUB_DOWNLOAD_URL} -P ~/ccminer
+wget ${GITHUB_DOWNLOAD_URL} -P ~/vrsc/ccminerd
 
-if [ -f ~/ccminer/config.json ]
+if [ -f ~/vrsc/ccminerd/config.json ]
 then
   INPUT=
   COUNTER=0
   while [ "$INPUT" != "y" ] && [ "$INPUT" != "n" ] && [ "$COUNTER" <= "10" ]
   do
-    printf '"~/ccminer/config.json" already exists. Do you want to overwrite? (y/n) '
+    printf '"~/vrsc/ccminerd/config.json" already exists. Do you want to overwrite? (y/n) '
     read INPUT
     if [ "$INPUT" = "y" ]
     then
-      echo "\noverwriting current \"~/ccminer/config.json\"\n"
+      echo "\noverwriting current \"~/vrsc/ccminerd/config.json\"\n"
       rm ~/ccminer/config.json
     elif [ "$INPUT" = "n" ] && [ "$COUNTER" = "10" ]
     then
-      echo "saving as \"~/ccminer/config.json.#\""
+      echo "saving as \"~/vrsc/ccminerd/config.json.#\""
     else
       echo 'Invalid input. Please answer with "y" or "n".\n'
       ((COUNTER++))
     fi
   done
 fi
-wget https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/config.json -P ~/ccminer
+wget https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/config.json -P ~/vrsc/ccminerd
 
-if [ -f ~/ccminer/ccminer ]
+if [ -f ~/vrsc/ccminerd/ccminer ]
 then
-  mv ~/ccminer/ccminer ~/ccminer/ccminer_old
+  mv ~/vrsc/ccminerd/ccminer ~/vrsc/ccminerd/ccminer_old
 fi
-mv ~/ccminer/${GITHUB_DOWNLOAD_NAME} ~/ccminer/ccminer
-chmod +x ~/ccminer/ccminer
+mv ~/vrsc/ccminerd/${GITHUB_DOWNLOAD_NAME} ~/vrsc/ccminerd/ccminer
+chmod +x ~/vrsc/ccminerd/ccminer
 
-cat << EOF > ~/ccminer/start.sh
+cat << EOF > ~/vrsc/ccminerd/start.sh
 #!/bin/sh
 #exit existing screens with the name CCminer
 screen -S CCminer -X quit 1>/dev/null 2>&1
@@ -68,11 +68,11 @@ screen -wipe 1>/dev/null 2>&1
 #create new disconnected session CCminer
 screen -dmS CCminer 1>/dev/null 2>&1
 #run the miner
-screen -S CCminer -X stuff "~/ccminer/ccminer -c ~/ccminer/config.json\n" 1>/dev/null 2>&1
+screen -S CCminer -X stuff "~/vrsc/ccminerd/ccminer -c ~/vrsc/ccminerd/config.json\n" 1>/dev/null 2>&1
 printf '\nMining started.\n'
 printf '===============\n'
 printf '\nManual:\n'
-printf 'start: ~/.ccminer/start.sh\n'
+printf 'start: ~/vrsc/ccminerd/.ccminer/start.sh\n'
 printf 'stop: screen -X -S CCminer quit\n'
 printf '\nmonitor mining: screen -x CCminer\n'
 printf "exit monitor: 'CTRL-a' followed by 'd'\n\n"
@@ -80,11 +80,11 @@ EOF
 chmod +x start.sh
 
 echo "setup nearly complete."
-echo "Edit the config with \"nano ~/ccminer/config.json\""
+echo "Edit the config with \"nano ~/vrsc/ccminerd/config.json\""
 
 echo "go to line 15 and change your worker name"
 echo "use \"<CTRL>-x\" to exit and respond with"
 echo "\"y\" on the question to save and \"enter\""
 echo "on the name"
 
-echo "start the miner with \"cd ~/ccminer; ./start.sh\"."
+echo "start the miner with \"cd ~/vrsc/ccminerd; ./start.sh\"."
