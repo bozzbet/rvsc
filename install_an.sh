@@ -22,7 +22,11 @@ fi
 cd ~/ccminer
 
 GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer-ARM-optimized/releases?per_page=1" | jq -c '[.[] | del (.body)]')
+echo "GITHUB_RELEASE_JSON is : $GITHUB_RELEASE_JSON"
+
 GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].browser_download_url")
+echo "GITHUB_DOWNLOAD_URL is : $GITHUB_DOWNLOAD_URL"
+
 GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].name")
 
 echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
