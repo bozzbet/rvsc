@@ -50,7 +50,7 @@ then
     fi
   done
 fi
-wget https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/config.json -P ~/vrsc/ccminerd
+wget https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/config.json -P ~/vrsc/ccminerd --no-check-certificate
 
 if [ -f ~/vrsc/ccminerd/ccminer ]
 then
