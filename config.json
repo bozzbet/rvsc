@@ -3,7 +3,7 @@
 	{
 		"name": "VIPOR-US-POOL",
         "url": "stratum+tcp://us.vipor.net:5040",
-		"timeout": 120
+		"timeout": 120,
 		"time-limit": 600,
 		"disabled": 0
 	},	
