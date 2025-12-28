@@ -21,19 +21,33 @@ Quick installation of mining on Android Phones
 - Knowledge on *ssh* and *scp* is highly recommended.
 - Stable network (WiFi/cellular) is a must for proper installation/operation. Be prepared to troubleshoot and fix them yourself.
 
-## Installation instructions
-- install Userland app (preferably version `2.8.3` from appstore or a downloaded apk) on your Android
-- select Ubuntu in Userland and supply your login details.
-- choose SSH
-- wait for it to install, enter Ubuntu and log into your account
+## Installation instructions for Android:
+- Install TERMUX on your Android
+- Install package for Ubuntu Environment.  This is included in the install-termux.sh.
+```bash
+    pkg install proot-distro
+    proot-distro install ubuntu
+```
+- Log into Ubuntu
+```bash
+    proot-distro login ubuntu
+```
+
+Verify Architecture is 64-bit:
 ```bash
 lscpu
 ```
 If the output doesn't show `Architecture: aarch64` or `CPU op-mode(s): 32-bit, 64-bit`, then do not bother to continue. Your phone is not running a 64-bit OS.
 
+Installer on ARM/non-Android(raspberry):
 ```bash
 curl -o- -k https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/install.sh | bash
 ```
+Installer on ARM/Android(mobile phones):
+```bash
+curl -o- -k https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/install-termux.sh | bash
+```
+
 For easy access on phones:
 ![install.sh](QR/mcvim_install.png)
 
@@ -44,7 +58,7 @@ nano config.json
 ```
 
 ## Usage:
-start mining with `~/vrsc/ccminerd/ccminer/start.sh`
+start mining with `~/ccminer/start.sh`
 
 Standard SSH port for Userland is port `2022`.
 Optional: create an entry in your SSH config file for each phone:
@@ -57,7 +71,7 @@ Host Pixel2XL01
 ```
 
 Starting the miner:
-`~/vrsc/ccminerd/ccminer/start.sh`
+`~/ccminer/start.sh`
 
 Monitoring the miner:
 - `screen -x CCminer`
