@@ -1,7 +1,8 @@
 #!/bin/sh
-pkg install proot-distro
-proot-distro install ubuntu
-proot-distro login ubuntu
+# Installthese pkg's before runing the install-termux.sh
+# pkg install proot-distro
+# proot-distro install ubuntu
+# proot-distro login ubuntu
 
 apt-get -y update
 apt-get -y upgrade
