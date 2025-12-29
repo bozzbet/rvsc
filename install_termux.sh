@@ -1,9 +1,4 @@
 #!/bin/sh
-# Installthese pkg's before runing the install-termux.sh
-# pkg install proot-distro
-# proot-distro install ubuntu
-# proot-distro login ubuntu
-
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev git screen nano jq wget
