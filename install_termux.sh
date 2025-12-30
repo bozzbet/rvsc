@@ -31,7 +31,7 @@ GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].browser_
 
 echo "GITHUB_DOWNLOAD_URL is : $GITHUB_DOWNLOAD_URL"
 
-GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].name")44
+GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].name")
 #GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".assets[0].name")
 
 echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
