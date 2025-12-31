@@ -1,5 +1,5 @@
 # Running CCminer on Mobile Phones (Android)
-Quick installation of mining on Android Phones
+Quick installation of CCminer on Android Phones
 
 ## Github cloning and customizing
 This is a fork from the OINK70 repository --> https://github.com/Oink70/Android-Mining.  Modifications are made to reflect my own accounts.  
