@@ -6,7 +6,7 @@ This is a fork from the OINK70 repository --> https://github.com/Oink70/Android-
 Clone this repository to your own github account and modify as necessary.
 
 Key Changes to be made: (These are taken from OINK70's instructions.)
-1. Change the URL on line 35 of the README.md to reflect your own account.
+1. Change the URL's on the README.md to reflect your own account.
 2. Replace `QR/mcvim_install.png` with your own.
 3. **Important**: Change the SSH key on line 13 of `install.sh` to reflect your own SSH key.
 4. Change lines 47 and/or 51 to reflect your own github link.
@@ -52,7 +52,7 @@ Installer on ARM/Android(mobile phones):
 curl -o- -k https://raw.githubusercontent.com/bozzbet/rvsc/mcvrsc/install-termux.sh | bash
 ```
 
-For easy access on phones:
+For quick access on phones:
 ![install.sh](QR/mcvim_install.png) (To be updated.....)
 
 After the installation, you need to update the config.json:
@@ -79,7 +79,6 @@ Sample config.json file:
 		"time-limit": 600,
 		"disabled": 0
 	}],
-	
 	"user": "wallet_address.miner_name",
 	"algo": "verus",
 	"threads": 8,
@@ -92,16 +91,6 @@ Sample config.json file:
 
 ## Usage:
 Start the ccminer by running this script `~/vrsc/ccminerd/start.sh`
-
-Standard SSH port for Userland is port `2022`.
-Optional: create an entry in your SSH config file for each phone:
-```
-Host Pixel2XL01
-    Hostname 192.168.25.81
-    Port 2022
-    User Pixel2XL01
-    IdentityFile ~\.ssh\id_vrsced25519
-```
 
 Starting the miner:
 `~/vrsc/ccminerd/start.sh`
