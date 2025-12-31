@@ -1,4 +1,4 @@
-# Android-Mining
+# Running CCminer on Mobile Phones (Android)
 Quick installation of mining on Android Phones
 
 ## Github cloning and customizing
