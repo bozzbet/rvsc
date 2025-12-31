@@ -1,4 +1,4 @@
-# Running CCminer on Mobile Phones (Android)
+# Running Verus Coin Mining on Mobile Phones (Android)
 Quick installation of CCminer on Android Phones
 
 ## Github cloning and customizing
