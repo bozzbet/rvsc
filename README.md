@@ -102,7 +102,9 @@ Monitoring the miner:
 Terminating the miner:
 `screen -X -S CCminer quit`
 
-## Monitoring your miners (on a linux host):  Follow instructions from OINK70's Github Repo
+## Monitoring your miners (on a linux host):  
+(Follow instructions from OINK70's Github Repo)
+
 Check [MONITORING](/monitoring/MONITORING.md).
 
 WARNING: The scripts installs my own public SSH key. You may want to remove that from your `~/.ssh/authorized_keys` file and replace it with your own for passwordless access.
