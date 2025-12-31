@@ -15,9 +15,9 @@
 		"disabled": 0
 	}],
 	
-	"user": "RQJra8pKCTZGtSetFFrhxqiCXnyNPa2cWk.mcvim2VRSC",
+	"user": "RQJra8pKCTZGtSetFFrhxqiCXnyNPa2cWk.mcvimVRSC",
 	"algo": "verus",
-	"threads": 6,
+	"threads": 7,
 	"cpu-priority": 1,
 	"retry-pause": 5,
 	"api-allow": "10.0.0.0/24",
