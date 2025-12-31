@@ -67,14 +67,14 @@ Sample config.json file:
 {
 	"pools":[
 	{
-		"name": "pool.verus.io",
-        "url": "stratum+tcp://pool.verus.io:9998",
+		"name": "<pool_name>",
+        "url": "stratum+tcp://<pool>:<port>",
 		"timeout": 150,
 		"disabled": 0
 	},
 	{
-		"name": "verus.farm (Quipacorn)",
-        "url": "stratum+tcp://verus.farm:9999",
+		"name": "<pool_name>",
+        "url": "stratum+tcp://<pool>:<port>",
 		"timeout": 60,
 		"time-limit": 600,
 		"disabled": 0
